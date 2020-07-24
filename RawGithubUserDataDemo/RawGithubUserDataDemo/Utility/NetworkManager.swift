@@ -24,13 +24,13 @@ struct WebAPI {
 class NetworkManager {
     static let sharedInstance = NetworkManager()
     private init() {}
-
+    
     func sendNetworkRequest(urlStr: String, httpMethod: HTTPMethod, parameters: [String: Any]?, completionHanlder: @escaping NetworkCompletionHander) {
         guard let url = URL(string: urlStr) else {
             completionHanlder(false, nil, NetworkError.invalidUrl)
             return
         }
-
+        
         AF.request(url, method: httpMethod, parameters: parameters,  headers: nil).responseJSON { (response) in
             switch response.result {
             case .success(let json):

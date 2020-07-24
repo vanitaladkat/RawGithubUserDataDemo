@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 
 class FullScreenViewController: UIViewController {
- 
     lazy var scrollView = UIScrollView()
     lazy var imageView = UIImageView()
     lazy var contentLabel = UILabel()
@@ -20,7 +19,6 @@ class FullScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-
 
     func setupUI() {
         view.backgroundColor = .white
@@ -41,14 +39,8 @@ class FullScreenViewController: UIViewController {
                 make.leading.equalTo(10)
                 make.trailing.equalTo(-10)
                 make.bottom.equalTo(-10)
-//                make.center.centerY.equalToSuperview()
             }
-//            imageView.snp.makeConstraints { (make) in
-//                make.top.bottom.equalTo(self.scrollView)
-//                make.left.right.equalTo(self.view)
-//                make.width.equalTo(self.scrollView)
-//                make.height.equalTo(self.scrollView)
-//            }
+
             let imgUrl = rawUserDataModel?.data ?? ""
             imageView.setImage(from: imgUrl, placeHolder: nil) { [weak self] (img) in
                 self?.imageView.contentMode = .scaleAspectFit

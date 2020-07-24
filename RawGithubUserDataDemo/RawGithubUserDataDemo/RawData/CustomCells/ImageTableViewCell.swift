@@ -16,14 +16,11 @@ class ImageTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        print("cell init")
         setupUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        print("init with coder")
-        fatalError("init(coder:) has not been implemented")
     }
 
     func setupUI() {
